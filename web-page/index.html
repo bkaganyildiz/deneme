@@ -1,0 +1,347 @@
+<!DOCTYPE HTML>
+<!--
+	Big Picture by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="login.js"></script>
+		<script type="text/javascript" src="signup.js"></script>
+		<style type="text/css">
+
+  nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  float: right;
+  border-radius: 3px;    
+}
+
+nav li {
+  float: left;          
+}
+
+nav #loginMix {
+  border-right: 1px solid #ddd;
+  box-shadow: 1px 0 0 #fff;  
+}
+
+nav #signup a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  height: 25px;
+  line-height: 25px;
+  font-weight: bold;
+  padding: 0 8px;
+  text-decoration: none;
+  color: #444;
+  text-shadow: 0 1px 0 #fff; 
+}
+
+nav #signup a {
+  border-radius: 0 3px 3px 0;
+}
+
+nav #loginMix-trigger {
+  border-radius: 3px 0 0 3px;
+}
+
+nav #loginMix-trigger:hover,
+nav #loginMix .active,
+nav #signup a:hover {
+}
+
+nav #loginMix-signup,
+nav #loginMix-trigger{
+	border: 2px solid #a1a1a1;
+    border-radius: 25px;
+}
+
+nav #loginMix-content {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  z-index: 999;    
+  background: transparent;
+  background-image: linear-gradient(top, #fff, #eee);  
+  padding: 15px;
+  border-radius: 3px 0 3px 3px;
+}
+
+nav li #loginMix-content {
+  right: 0;
+  width: 250px;  
+}
+
+/*--------------------*/
+
+#inputs input {
+  background: #f1f1f1;
+  padding: 6px 5px;
+  margin: 0 0 5px 0;
+  width: 238px;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  box-shadow: 0 1px 1px #ccc inset;
+}
+
+#inputs input:focus {
+  background-color: #fff;
+  border-color: #e8c291;
+  outline: none;
+  box-shadow: 0 0 0 1px #e8c291 inset;
+}
+
+/*--------------------*/
+
+#loginMix #actions {
+  margin: 10px 0 0 0;
+}
+
+#loginMix #submit {    
+  background-color: #d14545;
+  background-image: linear-gradient(top, #e97171, #d14545);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.5);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
+  border: 1px solid #7e1515;
+  float: left;
+  height: 30px;
+  padding: 0;
+  width: 100px;
+  cursor: pointer;
+  font: bold 14px Arial, Helvetica;
+  color: #fff;
+}
+
+#loginMix #submit:hover,
+#loginMix #submit:focus {    
+  background-color: #6b42f4;
+  background-image: linear-gradient(top, #d14545, #e97171);
+} 
+
+#loginMix #submit:active {   
+  outline: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;   
+}
+
+#loginMix #submit::-moz-focus-inner {
+  border: none;
+}
+
+#loginMix label {
+  float: right;
+  line-height: 30px;
+}
+
+#loginMix label input {
+  position: relative;
+  top: 2px;
+  right: 2px;
+}
+
+
+</style>
+
+
+
+
+		<title>Intellectual First Page</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+
+	<script type="text/javascript">
+			function signInPage () {
+				window.location.href='login.html';
+			}
+			function goToSignUp () {
+				window.location.href='#signUp';
+			}
+	</script>
+	<body>
+		<script type="text/javascript">
+
+  $(document).ready(function(){
+  $('#loginMix-trigger').click(function(){
+    $(this).next('#loginMix-content').slideToggle();
+    $(this).toggleClass('active');          
+    
+    if ($(this).hasClass('active')) $(this).find('span').html('&#x25B2;')
+      else $(this).find('span').html('&#x25BC;')
+    })
+  });
+
+
+</script>
+
+		<!-- Header -->
+			<header id="header">
+
+				<!-- Logo -->
+					<h1 id="logo">Intelllectual.me</h1>
+
+				<!-- Nav -->
+					<nav id="nav">
+					  <ul>
+
+					  	<li id="loginMix">
+					  		<button id="loginMix-trigger" href="#">
+					        Login <span>▼</span>
+					        </button>
+					  		<div id="loginMix-content">
+					        <form  action="./" method="post">
+					          <fieldset id="inputs">
+					            <input id="name" type="email" name="Email" placeholder="Username or email" required>   
+					            <input id="word" type="password" name="Password" placeholder="Password" required>
+					          </fieldset>
+					          <fieldset id="actions">
+					            <input type="submit" id="login" value="Login">
+					            <label><input type="checkbox" checked="checked"> <strong>Keep me signed in</strong></label>
+					          </fieldset>
+					          <strong style="margin-top:0px" id="fail"></strong>
+					        </form>
+
+					        </div> 
+
+					        <button id="loginMix-signup" onclick="goToSignUp();">Sign up</button>
+
+					  	</li>
+					  </ul>
+					</nav>
+			</header>
+
+		<!-- Intro -->
+			<section id="intro" class="main style1 dark fullscreen">
+				<div class="content container 75%">
+					<header>
+						<h2>Hey.</h2>
+					</header>
+					<p>Welcome to <strong>Intellectual</strong>, a world that you have never experienced before.</p>
+					<footer>
+						<a href="#one" class="button style2 down">More</a>
+					</footer>
+				</div>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="main style2 right dark fullscreen">
+				<div class="content box style2">
+					<header>
+						<h2>What is Intellectual?</h2>
+					</header>
+					<p>Intellectual is a social platform where you can rate your favourite movies, music and books. While we recommend you very cool new art pieces, you meet new people who tastes the world same as you do.</p>
+				</div>
+				<a href="#two" class="button style2 down anchored">Next</a>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="main style2 left dark fullscreen">
+				<div class="content box style2">
+					<p>We keep what you like, we hide what you don't. We are simply bringing you the best, by your choices.</p>
+				</div>
+				<a href="#signUp" class="button style2 down anchored">Next</a>
+			</section>
+
+		<!-- Work 
+			<section id="work" class="main style3 primary">
+				<div class="content container">
+					<header>
+						<h2>My Work</h2>
+						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
+						Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis
+						arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.</p>
+					</header>
+
+					<!-- Lightbox Gallery 
+						<div class="container 75% gallery">
+							<div class="row 0% images">
+								<div class="6u 12u(mobile)"><a href="images/fulls/01.jpg" class="image fit from-left"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a></div>
+								<div class="6u 12u(mobile)"><a href="images/fulls/02.jpg" class="image fit from-right"><img src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a></div>
+							</div>
+							<div class="row 0% images">
+								<div class="6u 12u(mobile)"><a href="images/fulls/03.jpg" class="image fit from-left"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a></div>
+								<div class="6u 12u(mobile)"><a href="images/fulls/04.jpg" class="image fit from-right"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a></div>
+							</div>
+							<div class="row 0% images">
+								<div class="6u 12u(mobile)"><a href="images/fulls/05.jpg" class="image fit from-left"><img src="images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a></div>
+								<div class="6u 12u(mobile)"><a href="images/fulls/06.jpg" class="image fit from-right"><img src="images/thumbs/06.jpg" title="Bent IX" alt="" /></a></div>
+							</div>
+						</div>
+
+				</div>
+			</section> -->
+
+		<!-- Contact -->
+			<section id="signUp" class="main style3 secondary">
+				<div class="content container">
+					<header>
+						<h2>Get started.</h2>
+						<p>Join now for free.</p>
+					</header>
+					<div class="box container 75%">
+
+					<!-- Contact Form -->
+							<form method="post" action="#">
+								<div class="row 50%">
+									<div class="6u 12u(mobile)"><input id="username" type="text" name="name" placeholder="Username" /></div>
+									<div class="6u 12u(mobile)"><input id="email" type="email" name="email" placeholder="Email" /></div>
+									<div class="6u 12u(mobile)"><input id="password" type="password" name="password1" placeholder="Password" /></div>
+									<div class="6u 12u(mobile)"><input id="password2" type="password" name="password2" placeholder="Password (again)" /></div>
+								</div>
+								<div class="row">
+									<div class="12u">
+										<ul class="actions">
+											<li><input id="signup" type="submit" value="Sign Up" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+
+				<!-- Icons -->
+					<ul class="actions">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+						<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+					</ul>
+
+				<!-- Menu -->
+					<ul class="menu">
+						<li>&copy; TamUyak</li>
+					</ul>
+
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
